@@ -1,18 +1,22 @@
+//capitalize function
 function capitalize(str){
-    console.log( str[0].toUpperCase() + str.slice(1)); 
+    if(typeof str!=="string" || str.length=== 0) return '';
+    return str[0].toUpperCase() + str.slice(1); 
 }
-//capitalize("hello");
+//reverse function
 function reverse(str){
-    let reverseStr=str.split("").reverse().join("");
-     console.log(reverseStr);
+    if(typeof str!=="string" ) return '';
+    return str.split("").reverse().join("");
+     
 }
-//reverse("hello");
+//contains function
 function contains(str,substr){
+    if(typeof str!=="string" || typeof substr!=="string" )return false ;
     return str.includes(substr);
 }
-//contains("Hello world","or");
-console.log(contains("Hello world","or"));
-module.exports={capitalize:capitalize,
-    reverse:reverse,
-    contains:contains
+
+//exporting functions
+module.exports={capitalize,
+    reverse,
+    contains
 };
